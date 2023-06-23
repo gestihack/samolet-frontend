@@ -17,16 +17,26 @@ export default {
             black: "#1E1E1E"
         },
         fontFamily: {
-            sans: "Gilroy"
+            sans: "Suisse Intl",
+            secondary: "Gilroy"
         },
         extend: {
             colors: {
                 white: {
+                    DEFAULT: "#FFFFFF",
                     accent: "#F4F6FB"
                 }
             }
         },
     },
+    safelist: [
+        {
+            pattern: /bg-(blue|gray-.+)/
+        }
+    ],
     plugins: [],
+    corePlugins: {
+        preflight: false,
+    }
 }
 

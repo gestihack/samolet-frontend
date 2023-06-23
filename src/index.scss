@@ -1,7 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 @import url("./style/fonts.scss");
 
 :root {
-    font-family: Gilroy, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: Suisse Intl, Gilroy, Inter, system-ui, Avenir, Helvetica, Arial,
+        sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
@@ -17,8 +23,27 @@
 }
 
 button {
-    @apply bg-currentColor
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0.6em 1.2em;
+    border: none;
+    transition: outline .05s, background-color 0.25s;
+    outline: 0px solid #0E6BCD;
+
+    &:hover {
+        background-color: #2E91FB;
+    }
+    &:focus, &:active {
+        outline: 4px solid #0E6BCD;
+    }
 }
+
+.ant-picker-focused {
+    border: none !important;
+    box-shadow: none !important;
+}
+
 a {
     font-weight: 500;
     color: #646cff;

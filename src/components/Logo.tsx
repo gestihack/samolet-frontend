@@ -2,9 +2,7 @@ import { FunctionComponent } from "react";
 import { ReactComponent as GestiLogo } from "../assets/gesti.tech.svg";
 import SmltLogo from "../assets/smlt_logo_blue_ru.png";
 
-interface LogoProps {}
-
-const Logo: FunctionComponent<LogoProps> = (props) => {
+const Logo: FunctionComponent = () => {
     return (
         <div className="w-fit h-fit">
             <div className="flex flex-col gap-y-0.5 mt-4">
@@ -13,7 +11,7 @@ const Logo: FunctionComponent<LogoProps> = (props) => {
                     <span className="inline bg-black w-px h-5 "></span>
                     <GestiLogo className="h-8"/>
                 </div>
-                <span className="text-center -mt-2">
+                <span className="text-center font-secondary -mt-2 text-gray-dark">
                     Платформа прогноза
                 </span>
             </div>

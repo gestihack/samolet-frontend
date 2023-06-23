@@ -1,3 +1,8 @@
+/*
+    Gilroy
+*/
+
+
 @font-face {
     font-family: "Gilroy";
     font-weight: 300;
@@ -12,4 +17,25 @@
     font-family: "Gilroy";
     font-weight: 400;
     src: url("../assets/fonts/Gilroy-Regular.ttf");
+}
+
+/*
+    Suisse Intl
+*/
+
+
+@font-face {
+    font-family: "Suisse Intl";
+    font-weight: 400;
+    src: url("../assets/fonts/SuisseIntl-Regular.ttf");
+}
+@font-face {
+    font-family: "Suisse Intl";
+    font-weight: 600;
+    src: url("../assets/fonts/SuisseIntl-SemiBold.ttf");
+}
+@font-face {
+    font-family: "Suisse Intl";
+    font-weight: 700;
+    src: url("../assets/fonts/SuisseIntl-Bold.ttf");
 }

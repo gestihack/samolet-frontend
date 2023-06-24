@@ -12,7 +12,7 @@
     font-weight: 400;
 
     color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
+    color: theme('colors.black');
     background-color: #242424;
 
     font-synthesis: none;
@@ -20,6 +20,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+}
+
+.rangePickerError {
+    border: 1px solid red;
 }
 
 button {
@@ -31,12 +35,37 @@ button {
     transition: outline .05s, background-color 0.25s;
     outline: 0px solid #0E6BCD;
 
-    &:hover {
+    &[btn-type=primary]:hover {
         background-color: #2E91FB;
     }
-    &:focus, &:active {
+    &[btn-type=primary]:focus, &[btn-type=primary]:active {
         outline: 4px solid #0E6BCD;
     }
+
+    &[btn-type=secondary]:hover {
+        background-color: #ddd;
+    }
+}
+
+.ui-section {
+    box-shadow: 0px 0px 1.3638190031051636px 0px rgba(15, 34, 67, 0.08), 0px 10.910552024841309px 87.28441619873047px 0px rgba(15, 34, 67, 0.05)
+}
+
+.tr {
+    
+    &:first-child {
+        border-top: 2px solid #e2edf8;
+    }
+    &:nth-child(even) {
+        @apply bg-[#f4f8ff]
+    }
+
+    @apply font-normal;
+}
+
+.td {
+    border-bottom: 2px solid #e2edf8;
+    @apply py-3 pl-1;
 }
 
 .ant-picker-focused {
@@ -86,16 +115,3 @@ h1 {
 // button:focus-visible {
 //     outline: 4px auto -webkit-focus-ring-color;
 // }
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
-}

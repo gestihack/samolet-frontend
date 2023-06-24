@@ -8,7 +8,7 @@ import RangePicker from "../components/RangePicker"
 const App: FunctionComponent = () => {
     const navigate = useNavigate()
     const [dates, setDates] = useState<[string, string]>()
-    const [error, setError] = useState<boolean>(false)
+    const [error, setError] = useState<boolean | undefined>(false)
 
     function predictRedir() {
         if (!dates?.[0] || !dates?.[1]) {

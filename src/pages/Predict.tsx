@@ -160,7 +160,7 @@ const Predict: FunctionComponent = () => {
                     </div>
                 </Section>
                 {!noDate ? (
-                    <Section className="flex flex-col py-8">
+                    <Section className="flex flex-col py-8 !px-2 sm:!px-12">
                         <span className="text-2xl font-medium">
                             Результат по стоимости 💰
                         </span>

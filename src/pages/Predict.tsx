@@ -231,7 +231,7 @@ const Predict: FunctionComponent = () => {
                                     />
                                 </Skeleton.Node>
                             ) : (
-                                <div className=" overflow-scroll h-fit w-full flex flex-1">
+                                <div className="overflow-auto h-fit w-full flex flex-1">
                                     <table
                                         cellSpacing="0"
                                         className="w-full h-full font-medium text-left ">

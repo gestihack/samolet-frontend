@@ -74,6 +74,14 @@ button {
 }
 
 @media (max-width: 480px) {
+    .ant-picker-presets ul {
+        display: flex;
+        flex-direction: column-reverse;
+
+        li + li {
+            margin: 0 !important;
+        }
+    }
     .ant-picker-dropdown {
         width: 320px;
     }

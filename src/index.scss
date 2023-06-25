@@ -111,7 +111,7 @@ a:hover {
 body {
     @apply bg-white-accent;
 
-    overflow-x: hidden;
+    overflow-x: clip;
     margin: 0;
     display: flex;
     place-items: center;

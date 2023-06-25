@@ -32,8 +32,8 @@ const RangePicker: FunctionComponent<RangePickerProps> = (props) => {
                         { label: "Три месяца", value: [ dayjs("2022-09-05"), dayjs("2022-09-05").add(3, "M")] },
                         { label: "Полгода", value: [ dayjs("2022-09-05"), dayjs("2022-09-05").add(6, "M")] },
                     ]}
-                    onCalendarChange={(dates, formatted) => props.setDates([dates?.[0]?.format("YYYY-MM-DD")!, dates?.[1]?.format("YYYY-MM-DD")!])}
-                    defaultPickerValue={[dayjs("2022-09-05"), dayjs("2023-09-05").add(2, "week")]}
+                    onCalendarChange={(dates) => props.setDates([dates?.[0]?.format("YYYY-MM-DD")!, dates?.[1]?.format("YYYY-MM-DD")!])}
+                    defaultPickerValue={[dayjs("2022-09-05"), dayjs("2022-09-05").add(2, "week")]}
                     disabledDate={(d) => d.isAfter(dayjs("2023-03-13", "YYYY-MM-DD")) || d.isBefore(dayjs("2022-09-05", "YYYY-MM-DD"))}
                     size="middle"
 

@@ -73,6 +73,24 @@ button {
     box-shadow: none !important;
 }
 
+@media (max-width: 480px) {
+    .ant-picker-dropdown {
+        width: 320px;
+    }
+    .ant-picker-dropdown-part {
+        width: 100%;
+    }
+    .ant-picker-header-view {
+        flex: unset !important;
+    }
+    .ant-picker-header-next-btn {
+        visibility: visible !important;
+    }
+    .ant-picker-header-super-next-btn {
+        visibility: visible !important;
+    }
+}
+
 a {
     font-weight: 500;
     color: #646cff;

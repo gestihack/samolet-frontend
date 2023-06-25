@@ -1,85 +1,3 @@
-const data = [
-    {
-        id: "aboba",
-        color: "hsl(211, 100%, 49%)",
-        data: [
-            { x: "05.01.2015", y: 32900 },
-            { x: "12.01.2015", y: 32500 },
-            { x: "19.01.2015", y: 32000 },
-            { x: "26.01.2015", y: 30700 },
-            { x: "02.02.2015", y: 30300 },
-            { x: "09.02.2015", y: 30300 },
-            { x: "16.02.2015", y: 30100 },
-            { x: "23.02.2015", y: 29400 },
-            { x: "02.03.2015", y: 29200 },
-            { x: "09.03.2015", y: 29000 },
-            { x: "16.03.2015", y: 28700 },
-            { x: "23.03.2015", y: 27800 },
-            { x: "30.03.2015", y: 27200 },
-            { x: "06.04.2015", y: 26600 },
-            { x: "13.04.2015", y: 25700 },
-            { x: "20.04.2015", y: 24800 },
-            { x: "27.04.2015", y: 24700 },
-            { x: "04.05.2015", y: 24300 },
-            { x: "11.05.2015", y: 23900 },
-            { x: "18.05.2015", y: 24000 },
-            { x: "25.05.2015", y: 23700 },
-            { x: "01.06.2015", y: 23500 },
-            { x: "08.06.2015", y: 23800 },
-            { x: "15.06.2015", y: 24400 },
-            { x: "22.06.2015", y: 25000 },
-            { x: "29.06.2015", y: 25300 },
-            { x: "06.07.2015", y: 25500 },
-            { x: "13.07.2015", y: 25500 },
-            { x: "20.07.2015", y: 25400 },
-            { x: "27.07.2015", y: 25200 },
-            { x: "03.08.2015", y: 25000 },
-            { x: "10.08.2015", y: 24700 },
-            { x: "17.08.2015", y: 24400 },
-            { x: "24.08.2015", y: 24100 },
-            { x: "31.08.2015", y: 24100 },
-            { x: "07.09.2015", y: 23900 },
-            { x: "14.09.2015", y: 24200 },
-            { x: "21.09.2015", y: 24200 },
-            { x: "28.09.2015", y: 24000 },
-            { x: "05.10.2015", y: 24000 },
-            { x: "12.10.2015", y: 23800 },
-            { x: "19.10.2015", y: 23800 },
-            { x: "26.10.2015", y: 24200 },
-            { x: "02.11.2015", y: 24500 },
-            { x: "09.11.2015", y: 24500 },
-            { x: "16.11.2015", y: 23950 },
-            { x: "23.11.2015", y: 23750 },
-            { x: "30.11.2015", y: 23100 },
-            { x: "07.12.2015", y: 22800 },
-            { x: "14.12.2015", y: 22000 },
-            { x: "21.12.2015", y: 21700 },
-            { x: "28.12.2015", y: 21300 },
-            { x: "04.01.2016", y: 21300 },
-            { x: "11.01.2016", y: 21300 },
-            { x: "18.01.2016", y: 21200 },
-            { x: "25.01.2016", y: 21000 },
-            { x: "01.02.2016", y: 21000 },
-            { x: "08.02.2016", y: 21000 },
-            { x: "15.02.2016", y: 21200 },
-            { x: "22.02.2016", y: 21800 },
-            { x: "29.02.2016", y: 22450 },
-            { x: "07.03.2016", y: 23300 },
-            { x: "14.03.2016", y: 23800 },
-            { x: "21.03.2016", y: 25500 },
-            { x: "28.03.2016", y: 26700 },
-            { x: "04.04.2016", y: 29900 },
-            { x: "11.04.2016", y: 29950 },
-            { x: "18.04.2016", y: 31500 },
-            { x: "25.04.2016", y: 31900 },
-            { x: "02.05.2016", y: 40300 },
-            { x: "09.05.2016", y: 43500 },
-            { x: "16.05.2016", y: 43350 },
-            { x: "23.05.2016", y: 42950 },
-        ],
-    },
-]
-
 type PredictTable = {
     date: number
     quantity: number
@@ -93,7 +11,7 @@ type PredictChart = {
 
 import { FunctionComponent, useEffect, useState } from "react"
 import Logo from "../components/Logo"
-import { /*Button,*/ Skeleton } from "antd"
+import { Skeleton } from "antd"
 import Button from "../components/Button"
 import dayjs from "dayjs"
 import arrow from "../assets/narrow.svg"
@@ -106,33 +24,9 @@ import { NavLink } from "react-router-dom"
 import Chart from "../components/Chart"
 import { useQuery } from "react-query"
 import { API_URL, EXCEL, PREDICT, fn } from "../Constants"
-import { useNavigate } from "react-router-dom"
 
 const Predict: FunctionComponent = () => {
     let noDate = false
-
-    // const chartQuery = useQuery({
-    //     enabled: true,
-    //     refetchInterval: false,
-    //     refetchOnWindowFocus: false,
-    //     queryKey: ["chart"],
-    //     cacheTime: 1_000_000,
-    //     queryFn: () => fn(CHART),
-    // })
-    // let chartIsFetching = chartQuery.isFetching
-    // let chartData = chartQuery.data
-    // if (chartQuery.isFetched) console.log(chartData)
-
-    // const tableQuery = useQuery({
-    //     enabled: true,
-    //     refetchInterval: false,
-    //     refetchOnWindowFocus: false,
-    //     queryKey: ["table"],
-    //     cacheTime: 1_000_000,
-    //     queryFn: () => fn(TABLE),
-    // })
-    // let tableIsFetching = tableQuery.isFetching
-    // let tableData: PredictTable[] = tableQuery.data
 
     let [searchParams, setSearchParams] = useSearchParams()
     let startDate = searchParams.get("start")
@@ -202,9 +96,9 @@ const Predict: FunctionComponent = () => {
 
     return (
         <div className="wrapper w-screen h-full flex place-items-start py-8 justify-center">
-            <div className="container md:max-w-[1357px] xl:px-52 lg:px-24 md:px-16 px-4 gap-y-3 flex flex-col">
+            <div className="container md:max-w-[1357px] xl:px-52 lg:px-24 md:px-16 sm:px-4 gap-y-3 flex flex-col">
                 <Section className=" flex-col sm:flex-row sm:justify-between items-center gap-4">
-                    <div className="flex flex-col font-medium">
+                    <div className="flex flex-col font-medium text-center sm:text-left">
                         <span className="text-gray-dark">
                             Добрый день! Сегодня:
                         </span>
@@ -215,7 +109,7 @@ const Predict: FunctionComponent = () => {
                             <Logo />
                         </NavLink>
                     </div>
-                    <div className="flex flex-col font-medium text-right">
+                    <div className="flex flex-col font-medium text-center sm:text-right">
                         {!noDate ? (
                             <>
                                 <span className="text-gray-dark">
@@ -231,7 +125,7 @@ const Predict: FunctionComponent = () => {
                         )}
                     </div>
                 </Section>
-                <Section className=" flex sm:flex-row flex-col w-full mx-4 gap-y-4 sm:gap-y-0 self-center xl:gap-x-16 lg:gap-x-8 gap-x-4 sm:!px-0 !py-1 justify-between items-center !bg-[transparent] !shadow-none">
+                <Section className=" flex sm:flex-row flex-col w-full sm:mx-4 gap-y-4 sm:gap-y-0 self-center xl:gap-x-16 lg:gap-x-8 gap-x-4 !px-0 !py-1 justify-between items-center !bg-[transparent] !shadow-none">
                     <div className=" w-full">
                         <RangePicker
                             {...{
